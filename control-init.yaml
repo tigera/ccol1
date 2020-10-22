@@ -32,7 +32,7 @@ write_files:
   path: /etc/k3s-control.sh
   permissions: '0775'
 - encoding: b64
-  content: ZXhwb3J0IEtVQkVDT05GSUc9L2hvbWUvdWJ1bnR1Ly5rdWJlL2NvbmZpZwpleHBvcnQgREFUQVNUT1JFX1RZUEU9a3ViZXJuZXRlcwoK
+  content: ZXhwb3J0IEtVQkVDT05GSUc9L2V0Yy9yYW5jaGVyL2szcy9rM3MueWFtbApleHBvcnQgREFUQVNUT1JFX1RZUEU9a3ViZXJuZXRlcwoK
   owner: root:root
   path: /etc/skel/.bash_aliases
 ssh_authorized_keys:
