@@ -1,0 +1,92 @@
+# Copyright (c) 2020 Tigera, Inc. All rights reserved.
+
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+
+#     http://www.apache.org/licenses/LICENSE-2.0
+
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+package_update: true
+packages:
+  - bird
+write_files:
+- encoding: b64
+  content: IyEvYmluL3NoCgpbIC1mICIvZXRjL25ldHBsYW4vNTEtc3RhdGljLnlhbWwiIF0gJiYgZXhpdCAwCgp3aGlsZSBbICEgLWYgL2V0Yy9uZXRwbGFuLzUwLWNsb3VkLWluaXQueWFtbCBdOwpkbwogICAgICAgIHNsZWVwIDEKZG9uZQoKSUZBQ0U9JChncmVwICdzZXQtbmFtZTonIC9ldGMvbmV0cGxhbi81MC1jbG91ZC1pbml0LnlhbWwgfCB0ciAtZCBbOnNwYWNlOl0gfCBjdXQgLWYyIC1kJzonKQoKcHJpbnRmICduZXR3b3JrOlxuICBldGhlcm5ldHM6XG4gICAgJXM6XG4gICAgICBhZGRyZXNzZXM6IFsgMTk4LjE5LjE1LjI1NC8yMCBdXG4gIHZlcnNpb246IDInICRJRkFDRSB8IHRlZSAvZXRjL25ldHBsYW4vNTEtc3RhdGljLnlhbWwK
+  owner: root:root
+  path: /etc/dynamicaddress.sh
+  permissions: '0755'
+- encoding: b64
+  content: IyEvYmluL2Jhc2gKCndoaWxlIFsgISAtZiAvaG9tZS91YnVudHUvLmt1YmUvY29uZmlnIF0KZG8KCXNsZWVwIDEKCWVjaG8gIldhaXRpbmcgdG8gc2NwIGZpbGUgZnJvbSBjb250cm9sLiIKCS91c3IvYmluL3NjcCAtaSAvaG9tZS91YnVudHUvLnNzaC9pZF9yc2EgLW8gU3RyaWN0SG9zdEtleUNoZWNraW5nPW5vIC1vIFVzZXJLbm93bkhvc3RzRmlsZT0vZGV2L251bGwgdWJ1bnR1QDE5OC4xOS4wLjE6L2V0Yy9yYW5jaGVyL2szcy9rM3MueWFtbCAvaG9tZS91YnVudHUvLmt1YmUvY29uZmlnCmRvbmUKCi91c3IvYmluL3NlZCAtaSAncy8xMjcuMC4wLjEvMTk4LjE5LjAuMS9nJyAvaG9tZS91YnVudHUvLmt1YmUvY29uZmlnCgplY2hvIEt1YmVjb25maWcgY29tcGxldGUuCgoK
+  owner: root:root
+  path: /etc/k3s-config.sh
+  permissions: '0755'
+- encoding: b64
+  content: W1VuaXRdCkRlc2NyaXB0aW9uPUluc3RhbGwgazNzIGNvbmZpZwpBZnRlcj1uZXR3b3JrLW9ubGluZS50YXJnZXQKQ29uZGl0aW9uUGF0aEV4aXN0cz0hL2hvbWUvdWJ1bnR1Ly5rdWJlL2NvbmZpZwoKW1NlcnZpY2VdCkV4ZWNTdGFydD0vYmluL3NoIC1jIC9ldGMvazNzLWNvbmZpZy5zaAoKW0luc3RhbGxdCldhbnRlZEJ5ID0gbXVsdGktdXNlci50YXJnZXQK
+  owner: root:root
+  path: /etc/systemd/system/k3s-config.service
+  permissions: '0644'
+- encoding: b64
+  content: bG9nIHN0ZGVyciBhbGw7Cgpyb3V0ZXIgaWQgMTk4LjE5LjE1LjI1NDsKCnByb3RvY29sIGRldmljZSB7CiAgc2NhbiB0aW1lIDI7ICAgICMgU2NhbiBpbnRlcmZhY2VzIGV2ZXJ5IDIgc2Vjb25kcwp9Cgpwcm90b2NvbCBrZXJuZWwgewogIGxlYXJuOyAgICAgICAgICAjIExlYXJuIGFsbCBhbGllbiByb3V0ZXMgZnJvbSB0aGUga2VybmVsCiAgcGVyc2lzdDsgICAgICAgICMgRG9uJ3QgcmVtb3ZlIHJvdXRlcyBvbiBiaXJkIHNodXRkb3duCiAgc2NhbiB0aW1lIDI7ICAgICMgU2NhbiBrZXJuZWwgcm91dGluZyB0YWJsZSBldmVyeSAyIHNlY29uZHMKICBpbXBvcnQgYWxsOwogIGdyYWNlZnVsIHJlc3RhcnQ7CiAgZXhwb3J0IGFsbDsgICAgICMgRGVmYXVsdCBpcyBleHBvcnQgbm9uZQogIG1lcmdlIHBhdGhzOyAgICAjIGVuYWJsZSBlY21wCn0KCnByb3RvY29sIGRpcmVjdCB7CiAgIGRlYnVnIGFsbDsKfQoKZmlsdGVyIGJncF9hbGxvdyB7CiAgaWYgKCBuZXQgPSAxOTguMTkuNDguMC8yMCApIHRoZW4gYWNjZXB0OwogIGlmICggbmV0IH4gWyAxOTguMTkuMzIuMC8yMCtdICkgdGhlbiBhY2NlcHQ7CiAgaWYgKCBuZXQgfiBbIDE5OC4xOS4yNC4wLzIxK10gKSB0aGVuIGFjY2VwdDsKICBlbHNlIHJlamVjdDsKfQoKcHJvdG9jb2wgYmdwICdjb250cm9sJyB7CiAgZGVzY3JpcHRpb24gIkNvbm5lY3Rpb24gdG8gY29udHJvbCI7CiAgbG9jYWwgYXMgNjQ1MTI7CiAgbmVpZ2hib3IgMTk4LjE5LjAuMSBhcyA2NDUxMjsKICBtdWx0aWhvcDsKICBleHBvcnQgbm9uZTsKICBncmFjZWZ1bCByZXN0YXJ0OwogIGltcG9ydCBmaWx0ZXIgYmdwX2FsbG93OwogIGFkZCBwYXRocyBvbjsKfQpwcm90b2NvbCBiZ3AgJ05vZGUxJyB7CiAgZGVzY3JpcHRpb24gIkNvbm5lY3Rpb24gdG8gTm9kZTEiOwogIGxvY2FsIGFzIDY0NTEyOwogIG5laWdoYm9yIDE5OC4xOS4wLjIgYXMgNjQ1MTI7CiAgbXVsdGlob3A7CiAgZXhwb3J0IG5vbmU7CiAgZ3JhY2VmdWwgcmVzdGFydDsKICBpbXBvcnQgZmlsdGVyIGJncF9hbGxvdzsKICBhZGQgcGF0aHMgb247Cn0KcHJvdG9jb2wgYmdwICdOb2RlMicgewogIGRlc2NyaXB0aW9uICJDb25uZWN0aW9uIHRvIE5vZGUyIjsKICBsb2NhbCBhcyA2NDUxMjsKICBuZWlnaGJvciAxOTguMTkuMC4zIGFzIDY0NTEyOwogIG11bHRpaG9wOwogIGV4cG9ydCBub25lOwogIGdyYWNlZnVsIHJlc3RhcnQ7CiAgaW1wb3J0IGZpbHRlciBiZ3BfYWxsb3c7CiAgYWRkIHBhdGhzIG9uOwp9CgoK
+  owner: root:root
+  path: /etc/bird/bird.conf
+  permissions: '0644'
+- encoding: b64
+  content: ZXhwb3J0IEtVQkVDT05GSUc9L2hvbWUvdWJ1bnR1Ly5rdWJlL2NvbmZpZwpleHBvcnQgREFUQVNUT1JFX1RZUEU9a3ViZXJuZXRlcwoK
+  owner: root:root
+  path: /etc/skel/.bash_aliases
+  permissions: '0644'
+ssh_authorized_keys:
+  - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCvW2dRLu0PLQeQ5q5X76RaPvh8/lhhTzucdOizgzJfbUClve4KVCivtB1/S0rX6uuZL6TZhtRDrB1bVGAkwnt6zTT/irQ1ly1AseLAGIdA+03ikQ4gD1hL+MPURko4O9qWyDpBzPtjinRkXYTPdDe3g5jj1CZMI8uw+oOwdxf/9efeEfiQZ+pZuqgtEJttxWx3NrLqiyZhiciSVoRxyXkOltMdovzNeeeRB0KkFKhjSWhjTW0QRJ19ZsDtH3lxChQd7YFfTtYL0oe3ZkRINzHwfr1vzTVaolWTF70H4LWFaTZpmFWZ+WmmXNriUHwov2TBsCYRMAJkM72PAi8WmtWR calico@cloud
+ssh_keys:
+  rsa_private: |
+     -----BEGIN RSA PRIVATE KEY-----
+     MIIEowIBAAKCAQEAr1tnUS7tDy0HkOauV++kWj74fP5YYU87nHTos4MyX21Apb3u
+     ClQor7Qdf0tK1+rrmS+k2YbUQ6wdW1RgJMJ7es00/4q0NZctQLHiwBiHQPtN4pEO
+     IA9YS/jD1EZKODvalsg6Qcz7Y4p0ZF2Ez3Q3t4OY49QmTCPLsPqDsHcX//Xn3hH4
+     kGfqWbqoLRCbbcVsdzay6osmYYnIklaEccl5DpbTHaL8zXnnkQdCpBSoY0loY01t
+     EESdfWbA7R95cQoUHe2BX07WC9KHt2ZESDcx8H69b801WqJVkxe9B+C1hWk2aZhV
+     mflpplza4lB8KL9kwbAmETACZDO9jwIvFprVkQIDAQABAoIBAGGevNGREh+UrdWY
+     1g3WNuSWkbbj0Ue62DCtVK46p1xAcfDS3yWY3F2UI6etvqic+zN4NolyadCSjHU/
+     b5aHPj6K5qosCU6cLnEJlnXiMcmXHTC4F+j5IeqJPlt6Fe9gQrwWE3h2KKytc0Y8
+     Waczx6C9/es3O2q/srF/hLhEVHQFAUzVQ0VAYdHZUcWgrTRtCi+etXaYssXLbuH/
+     R0UVb4qctEHRbE9LwLOG8u7o+xC9xYnmMUKAKgyEwwYIR5F1kR3Ebl/cx10owfqV
+     YhF7V3hbpAbNUdsdhG/Wv3Q3pRFzz3hRGQpfFPG1PINpf3j5oGTbMzdxuT6ddbq+
+     1wNsWcECgYEA3HXqkoRx5bSvIMhrOQJmrXjxo5ecWfa8sLohJJYkka9G3TprA4fy
+     9p1IbPgkzDO0RQmCxKQt3Z7OC5mk1owevpF+sJEEFYKhRdOoS8u3VONp6vWUikVc
+     hdpeWAOWOc7tiYMyew6+NprBNF2YbgnRnNXdErfGYGt4p2+Yn19+jIUCgYEAy6Ah
+     OR8pTaGu2p6WYHJtYPa90zHwVSSBcpNREVoNrIPo/YEOZDPCnKTEX+rHoEdSS1lC
+     n2E3hytP7vv/sPGRz2R7h2+2Off47smdt4wJ6zoioOTPjWnCUfix4Kjay5WGswSJ
+     tsMVe2WTaUV/bG/d23du4CLmVHnZOmJK0Ml4iJ0CgYBCBgJhLM8bdvg3vi32XdS4
+     QQ9E6gPGIZGy75s7ZMfA5Zg4auVfolhOKR5mnA4RJa7oOgfysiSWSZf1e2cVZdNT
+     SSmC4XsyofOAgPnW8USPZKf02OVKX6ls4M/+VdyopWMYGrWEiw7GNaSE9T7QPZqL
+     +LSDhYwgli8FHfO8TxIMLQKBgQCv5frtIjsGwcWPOvGCDTbpTRw7pWcL1cYw2Itu
+     JtGrFiQdYO+ypXfW4wp0JRcfIJ05U7kWft99129sbam6C2O+uPlwzJKozsnuVKH2
+     nXUwCv9A54dXjGV9dA0MmjCvLtK2MBRamXkkKGHHzW4+mQAYhrpzyhIYJU3+fkxM
+     wc1qjQKBgF7erwUBI5zt+vPcurh/pANDWuEOz1zqBr3svqXytI8UvySuHP9qfHY0
+     JLdAyiMNRolMOEVe7umTbB95DifK7DqK2bTw9jrtUdOJ18G5cTf3+pv8NZKCg0B8
+     56E90uQJS9aJ/qVZiubWiZpFuIX2tqjulqpp9aN3NbA/Uv8YJa78
+     -----END RSA PRIVATE KEY-----
+
+  rsa_public: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCvW2dRLu0PLQeQ5q5X76RaPvh8/lhhTzucdOizgzJfbUClve4KVCivtB1/S0rX6uuZL6TZhtRDrB1bVGAkwnt6zTT/irQ1ly1AseLAGIdA+03ikQ4gD1hL+MPURko4O9qWyDpBzPtjinRkXYTPdDe3g5jj1CZMI8uw+oOwdxf/9efeEfiQZ+pZuqgtEJttxWx3NrLqiyZhiciSVoRxyXkOltMdovzNeeeRB0KkFKhjSWhjTW0QRJ19ZsDtH3lxChQd7YFfTtYL0oe3ZkRINzHwfr1vzTVaolWTF70H4LWFaTZpmFWZ+WmmXNriUHwov2TBsCYRMAJkM72PAi8WmtWR calico@cloud
+runcmd:
+  - [ cloud-init, single, --name, cc_write_files, --frequency, always ]
+  - [ /usr/bin/sh, -c, /etc/dynamicaddress.sh ]
+  - [ /usr/bin/cp, -Ra, /etc/ssh/ssh_host_rsa_key, /home/ubuntu/.ssh/id_rsa ]
+  - [ /usr/bin/cp, -Ra, /etc/ssh/ssh_host_rsa_key.pub, /home/ubuntu/.ssh/id_rsa.pub ]
+  - [ /usr/bin/chown, -R, ubuntu:ubuntu, /home/ubuntu/.ssh ]
+  - [ /usr/bin/mkdir, /home/ubuntu/.kube ]
+  - [ /usr/bin/curl, -o, /usr/bin/kubectl, -L, "https://storage.googleapis.com/kubernetes-release/release/v1.19.2/bin/linux/amd64/kubectl" ]
+  - [ /usr/bin/chmod, +x, /usr/bin/kubectl ]
+  - [ /usr/bin/curl, -o, /usr/local/bin/calicoctl, -L, https://github.com/projectcalico/calicoctl/releases/download/v3.16.1/calicoctl ]
+  - [ /usr/bin/chmod, +x, /usr/local/bin/calicoctl ]
+  - [ /usr/bin/chown, -R, ubuntu:ubuntu, /home/ubuntu ]
+  - [ /usr/bin/systemctl, enable, k3s-config.service ]
+
+power_state:
+  mode: reboot
