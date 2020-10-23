@@ -35,6 +35,11 @@ write_files:
   content: ZXhwb3J0IEtVQkVDT05GSUc9L2hvbWUvdWJ1bnR1Ly5rdWJlL2NvbmZpZwpleHBvcnQgREFUQVNUT1JFX1RZUEU9a3ViZXJuZXRlcwoK
   owner: root:root
   path: /etc/skel/.bash_aliases
+- encoding: b64
+  content: CjE5OC4xOS4wLjEgY29udHJvbAoxOTguMTkuMC4yIG5vZGUxCjE5OC4xOS4wLjMgbm9kZTIKMTk4LjE5LjE1LjI1NCBob3N0MQoK
+  owner: root:root
+  path: /etc/cloud/templates/hosts.debian.tmpl
+  append: true
 ssh_authorized_keys:
   - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCvW2dRLu0PLQeQ5q5X76RaPvh8/lhhTzucdOizgzJfbUClve4KVCivtB1/S0rX6uuZL6TZhtRDrB1bVGAkwnt6zTT/irQ1ly1AseLAGIdA+03ikQ4gD1hL+MPURko4O9qWyDpBzPtjinRkXYTPdDe3g5jj1CZMI8uw+oOwdxf/9efeEfiQZ+pZuqgtEJttxWx3NrLqiyZhiciSVoRxyXkOltMdovzNeeeRB0KkFKhjSWhjTW0QRJ19ZsDtH3lxChQd7YFfTtYL0oe3ZkRINzHwfr1vzTVaolWTF70H4LWFaTZpmFWZ+WmmXNriUHwov2TBsCYRMAJkM72PAi8WmtWR calico@cloud
 ssh_keys:
