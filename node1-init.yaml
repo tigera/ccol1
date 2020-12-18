@@ -74,12 +74,11 @@ ssh_keys:
      -----END RSA PRIVATE KEY-----
 
   rsa_public: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCvW2dRLu0PLQeQ5q5X76RaPvh8/lhhTzucdOizgzJfbUClve4KVCivtB1/S0rX6uuZL6TZhtRDrB1bVGAkwnt6zTT/irQ1ly1AseLAGIdA+03ikQ4gD1hL+MPURko4O9qWyDpBzPtjinRkXYTPdDe3g5jj1CZMI8uw+oOwdxf/9efeEfiQZ+pZuqgtEJttxWx3NrLqiyZhiciSVoRxyXkOltMdovzNeeeRB0KkFKhjSWhjTW0QRJ19ZsDtH3lxChQd7YFfTtYL0oe3ZkRINzHwfr1vzTVaolWTF70H4LWFaTZpmFWZ+WmmXNriUHwov2TBsCYRMAJkM72PAi8WmtWR calico@cloud
-runcmd:
+bootcmd:
   - [ /usr/sbin/iptables, -t, mangle, -A, POSTROUTING, -p, tcp, --tcp-flags, 'SYN,RST', SYN, -j, TCPMSS, --set-mss, 1300 ]
   - [ /usr/sbin/ip6tables, -t, mangle, -A, POSTROUTING, -p, tcp, --tcp-flags, 'SYN,RST', SYN, -j, TCPMSS, --set-mss, 1300 ]
-  - [ /usr/bin/sh, -c, "/usr/sbin/iptables-save | /usr/bin/tee /etc/iptables/rules.v4" ]
-  - [ /usr/bin/sh, -c, "/usr/sbin/ip6tables-save | /usr/bin/tee /etc/iptables/rules.v6" ]
-  - [ cloud-init, single, --name, cc_write_files, --frequency, always ]
+runcmd:
+  - [ /usr/bin/cloud-init, single, --name, cc_write_files, --frequency, always ]
   - [ /usr/bin/sh, -c, /etc/dynamicaddress.sh ]
   - [ /usr/bin/systemctl, enable, NetworkManager-wait-online.service ]
   - [ /usr/bin/cp, -Ra, /etc/ssh/ssh_host_rsa_key, /home/ubuntu/.ssh/id_rsa ]
