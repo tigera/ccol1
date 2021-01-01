@@ -95,6 +95,8 @@ runcmd:
   - [ /usr/bin/chmod, +x, /usr/bin/kubectl ]
   - [ /usr/bin/curl, -o, /usr/local/bin/calicoctl, -L, https://github.com/projectcalico/calicoctl/releases/download/v3.16.1/calicoctl ]
   - [ /usr/bin/chmod, +x, /usr/local/bin/calicoctl ]
+  - [ /usr/bin/curl, -o, /usr/local/bin/verify, -L, https://github.com/tigera/ccol1/releases/download/1.0/verify ]
+  - [ /usr/bin/chmod, +x, /usr/local/bin/verify ]
   - [ /usr/bin/chown, -R, ubuntu:ubuntu, /home/ubuntu ]
   - [ /usr/bin/systemctl, enable, k3s-config.service ]
 
