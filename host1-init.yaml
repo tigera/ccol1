@@ -93,7 +93,7 @@ runcmd:
   - [ /usr/bin/mkdir, /home/ubuntu/.kube ]
   - [ /usr/bin/curl, -o, /usr/bin/kubectl, -L, "https://storage.googleapis.com/kubernetes-release/release/v1.19.2/bin/linux/amd64/kubectl" ]
   - [ /usr/bin/chmod, +x, /usr/bin/kubectl ]
-  - [ /usr/bin/curl, -o, /usr/local/bin/calicoctl, -L, https://github.com/projectcalico/calicoctl/releases/download/v3.16.1/calicoctl ]
+  - [ /usr/bin/curl, -o, /usr/local/bin/calicoctl, -L, https://github.com/projectcalico/calicoctl/releases/download/v3.19.0/calicoctl ]
   - [ /usr/bin/chmod, +x, /usr/local/bin/calicoctl ]
   - [ /usr/bin/curl, -o, /usr/local/bin/verify, -L, https://github.com/tigera/ccol1/releases/download/1.0/verify ]
   - [ /usr/bin/chmod, +x, /usr/local/bin/verify ]

@@ -83,7 +83,7 @@ runcmd:
   - [ /usr/bin/systemctl, enable, NetworkManager-wait-online.service ]
   - [ /usr/bin/cp, -Ra, /etc/ssh/ssh_host_rsa_key, /home/ubuntu/.ssh/id_rsa ]
   - [ /usr/bin/cp, -Ra, /etc/ssh/ssh_host_rsa_key.pub, /home/ubuntu/.ssh/id_rsa.pub ]
-  - [ /usr/bin/curl, -o, /usr/local/bin/calicoctl, -L, https://github.com/projectcalico/calicoctl/releases/download/v3.16.1/calicoctl ]
+  - [ /usr/bin/curl, -o, /usr/local/bin/calicoctl, -L, https://github.com/projectcalico/calicoctl/releases/download/v3.19.0/calicoctl ]
   - [ /usr/bin/chmod, +x, /usr/local/bin/calicoctl ]
   - [ /usr/bin/chown, -R, ubuntu:ubuntu, /home/ubuntu ]
   - [ /usr/bin/systemctl, enable, k3s-agent.service ]
