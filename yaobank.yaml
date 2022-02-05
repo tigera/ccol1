@@ -52,6 +52,9 @@ spec:
       containers:
       - name: database
         image: calico/yaobank-database:certification
+        env:
+        - name: ETCD_UNSUPPORTED_ARCH
+          value: "arm64"
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 2379
