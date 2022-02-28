@@ -51,7 +51,7 @@ spec:
       serviceAccountName: database
       containers:
       - name: database
-        image: calico/yaobank-database:certification
+        image: calico/yaobank-database:multiarch
         env:
         - name: ETCD_UNSUPPORTED_ARCH
           value: "arm64"
@@ -113,7 +113,7 @@ spec:
       serviceAccountName: summary
       containers:
       - name: summary
-        image: calico/yaobank-summary:certification
+        image: calico/yaobank-summary:multiarch
         imagePullPolicy: Always
         ports:
         - containerPort: 80
@@ -166,7 +166,7 @@ spec:
       serviceAccountName: customer
       containers:
       - name: customer
-        image: calico/yaobank-customer:certification
+        image: calico/yaobank-customer:multiarch
         imagePullPolicy: Always
         ports:
         - containerPort: 80

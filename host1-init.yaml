@@ -47,6 +47,11 @@ write_files:
   owner: root:root
   path: /etc/cloud/templates/hosts.debian.tmpl
   append: true
+- encoding: b64
+  content: IyEvYmluL2Jhc2gKQVJDSD1gdW5hbWUgLW1gCmlmIFtbICRBUkNIID09ICJ4ODZfNjQiIF1dCnRoZW4KL3Vzci9iaW4vY3VybCAtbyAvdXNyL2Jpbi9rdWJlY3RsIC1MIGh0dHBzOi8vc3RvcmFnZS5nb29nbGVhcGlzLmNvbS9rdWJlcm5ldGVzLXJlbGVhc2UvcmVsZWFzZS92MS4xOS4yL2Jpbi9saW51eC9hcm02NC9rdWJlY3RsCi91c3IvYmluL2NobW9kICt4IC91c3IvYmluL2t1YmVjdGwKL3Vzci9iaW4vY3VybCAtbyAvdXNyL2xvY2FsL2Jpbi9jYWxpY29jdGwgLUwgaHR0cHM6Ly9naXRodWIuY29tL3Byb2plY3RjYWxpY28vY2FsaWNvY3RsL3JlbGVhc2VzL2Rvd25sb2FkL3YzLjIxLjQvY2FsaWNvY3RsLWxpbnV4LWFybTY0IC1vIGNhbGljb2N0bAovdXNyL2Jpbi9jaG1vZCAreCAvdXNyL2xvY2FsL2Jpbi9jYWxpY29jdGwgCi91c3IvYmluL2N1cmwgLW8gL3Vzci9sb2NhbC9iaW4vdmVyaWZ5IC1MIGh0dHBzOi8vZ2l0aHViLmNvbS90aWdlcmEvY2NvbDEvcmVsZWFzZXMvZG93bmxvYWQvMS4wL3ZlcmlmeV9hcm02NCAtbyB2ZXJpZnkKL3Vzci9iaW4vY2htb2QgK3ggL3Vzci9sb2NhbC9iaW4vdmVyaWZ5CmVsc2UKL3Vzci9iaW4vY3VybCAtbyAvdXNyL2Jpbi9rdWJlY3RsIC1MIGh0dHBzOi8vc3RvcmFnZS5nb29nbGVhcGlzLmNvbS9rdWJlcm5ldGVzLXJlbGVhc2UvcmVsZWFzZS92MS4xOS4yL2Jpbi9saW51eC9hcm02NC9rdWJlY3RsCi91c3IvYmluL2NobW9kICt4IC91c3IvYmluL2t1YmVjdGwKL3Vzci9iaW4vY3VybCAtbyAvdXNyL2xvY2FsL2Jpbi9jYWxpY29jdGwgLUwgaHR0cHM6Ly9naXRodWIuY29tL3Byb2plY3RjYWxpY28vY2FsaWNvY3RsL3JlbGVhc2VzL2Rvd25sb2FkL3YzLjIxLjQvY2FsaWNvY3RsLWxpbnV4LWFybTY0IC1vIGNhbGljb2N0bAovdXNyL2Jpbi9jaG1vZCAreCAvdXNyL2xvY2FsL2Jpbi9jYWxpY29jdGwgCi91c3IvYmluL2N1cmwgLW8gL3Vzci9sb2NhbC9iaW4vdmVyaWZ5IC1MIGh0dHBzOi8vZ2l0aHViLmNvbS90aWdlcmEvY2NvbDEvcmVsZWFzZXMvZG93bmxvYWQvMS4wL3ZlcmlmeV9hcm02NCAtbyB2ZXJpZnkKL3Vzci9iaW4vY2htb2QgK3ggL3Vzci9sb2NhbC9iaW4vdmVyaWZ5CmZp
+  owner: root:root
+  path: /root/bin_downloader.sh
+  permissions: '0644'
 ssh_authorized_keys:
   - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCvW2dRLu0PLQeQ5q5X76RaPvh8/lhhTzucdOizgzJfbUClve4KVCivtB1/S0rX6uuZL6TZhtRDrB1bVGAkwnt6zTT/irQ1ly1AseLAGIdA+03ikQ4gD1hL+MPURko4O9qWyDpBzPtjinRkXYTPdDe3g5jj1CZMI8uw+oOwdxf/9efeEfiQZ+pZuqgtEJttxWx3NrLqiyZhiciSVoRxyXkOltMdovzNeeeRB0KkFKhjSWhjTW0QRJ19ZsDtH3lxChQd7YFfTtYL0oe3ZkRINzHwfr1vzTVaolWTF70H4LWFaTZpmFWZ+WmmXNriUHwov2TBsCYRMAJkM72PAi8WmtWR calico@cloud
 ssh_keys:
@@ -91,12 +96,8 @@ runcmd:
   - [ /usr/bin/cp, -Ra, /etc/ssh/ssh_host_rsa_key.pub, /home/ubuntu/.ssh/id_rsa.pub ]
   - [ /usr/bin/chown, -R, ubuntu:ubuntu, /home/ubuntu/.ssh ]
   - [ /usr/bin/mkdir, /home/ubuntu/.kube ]
-  - [ /usr/bin/curl, -o, /usr/bin/kubectl, -L, "https://storage.googleapis.com/kubernetes-release/release/v1.19.2/bin/linux/amd64/kubectl" ]
-  - [ /usr/bin/chmod, +x, /usr/bin/kubectl ]
-  - [ /usr/bin/curl, -o, /usr/local/bin/calicoctl, -L, https://github.com/projectcalico/calicoctl/releases/download/v3.19.0/calicoctl ]
-  - [ /usr/bin/chmod, +x, /usr/local/bin/calicoctl ]
-  - [ /usr/bin/curl, -o, /usr/local/bin/verify, -L, https://github.com/tigera/ccol1/releases/download/1.0/verify ]
-  - [ /usr/bin/chmod, +x, /usr/local/bin/verify ]
+  - [ /usr/bin/chmod, +x, /root/bin_downloader.sh ]
+  - [ /root/bin_downloader.sh ]
   - [ /usr/bin/chown, -R, ubuntu:ubuntu, /home/ubuntu ]
   - [ /usr/bin/systemctl, enable, k3s-config.service ]
 
