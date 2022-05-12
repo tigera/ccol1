@@ -82,6 +82,8 @@ ssh_keys:
 bootcmd:
   - [ /usr/sbin/iptables, -t, mangle, -A, POSTROUTING, -p, tcp, --tcp-flags, 'SYN,RST', SYN, -j, TCPMSS, --set-mss, 1300 ]
   - [ /usr/sbin/ip6tables, -t, mangle, -A, POSTROUTING, -p, tcp, --tcp-flags, 'SYN,RST', SYN, -j, TCPMSS, --set-mss, 1300 ]
+  - printf "[Resolve]\nDNS=1.1.1.1" > /etc/systemd/resolved.conf
+  - [systemctl, restart, systemd-resolved]
 runcmd:
   - [ /usr/bin/cloud-init, single, --name, cc_write_files, --frequency, always ]
   - [ /usr/bin/sh, -c, /etc/dynamicaddress.sh ]
